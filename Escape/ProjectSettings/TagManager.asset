@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ForestMap
+  - DesertMap
+  - CaveEntrance
+  - DirectionalLight
+  - CaveExit
+  - CaveMap
+  - KeyTree
+  - ForestWoodSign
+  - DesertWoodSign
+  - ThirdPersonCamera
+  - FirstPersonCamera
+  - key_gold
+  - key_silver
+  - key_purple
+  - right_thumb
+  - left_thumb
+  - CaveLight
+  - hammer
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Foot
+  - Forest Ground
+  - Desert Ground
+  - Cave Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
