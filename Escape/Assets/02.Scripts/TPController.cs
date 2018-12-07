@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 3인칭 카메라 코드 */
 public class TPController : MonoBehaviour {
     public Transform player;            // 캐릭터 위치
     public float dist = 5.0f;           // 캐릭터와의 거리

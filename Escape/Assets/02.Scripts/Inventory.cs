@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 인벤토리의 저장소 구성 */
 public class Inventory : MonoBehaviour {
 
+    // 인벤토리 싱글톤으로 구성
     #region Singleton
     public static Inventory instance;
 
@@ -11,20 +13,21 @@ public class Inventory : MonoBehaviour {
     {
         if(instance != null)
         {
-            Debug.LogWarning("More than one instance of Inventory found!");
+            Debug.LogWarning("There's more than one instance.");
             return;
         }
         instance = this;
     }
     #endregion
 
-    public delegate void OnItemChanged();
-    public OnItemChanged OnItemChangedCallback;
+    public delegate void OnItemChanged();           // 아이템 변경 감지하는 delegate 선언
+    public OnItemChanged OnItemChangedCallback;     // 위에 선언한 delegate변수 인스턴스화
 
-    public int space = 5;
+    public int space = 5;                           // 인벤토리 공간
 
-    public List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>();     // 아이템 리스트
 
+    /* 인벤토리 리스트에 아이템 추가 */
     public bool Add(Item item)
     {
         if (!item.isDefaultItem)
@@ -35,8 +38,10 @@ public class Inventory : MonoBehaviour {
                 return false;
             }
 
+            // 아이템 리스트에 새로운 아이템 추가
             items.Add(item);
 
+            // UpDate UI 호출
             if(OnItemChangedCallback != null)
                 OnItemChangedCallback.Invoke();
         }
@@ -44,9 +49,13 @@ public class Inventory : MonoBehaviour {
         return true;
     }
 
+    /* 인벤토리 리스트에 아이템 제거 */
     public void Remove(Item item)
     {
+        // 아이템 리스트에서 아이템 제거
         items.Remove(item);
+
+        // UpDate UI 호출
         if (OnItemChangedCallback != null)
             OnItemChangedCallback.Invoke();
     }

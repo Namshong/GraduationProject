@@ -10623,9 +10623,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 283413700}
-  - component: {fileID: 283413695}
   - component: {fileID: 283413698}
   - component: {fileID: 283413697}
+  - component: {fileID: 283413695}
   - component: {fileID: 283413696}
   - component: {fileID: 283413699}
   m_Layer: 0
@@ -10644,10 +10644,10 @@ Animator:
   m_GameObject: {fileID: 283413694}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8d5a0e0d58f4e4176a844a1a03976c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: bb1c69dba6210b2478d26d22052bf8bf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -10664,14 +10664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd3581e2b53bdf4683152e9f577e14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animSpeed: 1.5
-  lookSmoother: 3
-  useCurves: 1
-  useCurvesHeight: 0.5
-  forwardSpeed: 20
-  backwardSpeed: 15
+  speed: 5
+  runningSpeed: 15
   rotateSpeed: 2
-  jumpPower: 5
+  jumpPower: 1
+  animator: {fileID: 283413695}
+  rbody: {fileID: 283413697}
 --- !u!54 &283413697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10679,7 +10677,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283413694}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -10714,7 +10712,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283413694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 509, y: 77, z: 929}
+  m_LocalPosition: {x: 937, y: 77, z: 87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2096982820}
@@ -25851,7 +25849,6 @@ MonoBehaviour:
   cancel: {fileID: 2080621336}
   ok: {fileID: 1291195203}
   secretNumber: 
-  clickSound: {fileID: 8300000, guid: 7f9c87925441e43bdbb6399f1c1793a6, type: 3}
   text: {fileID: 1012475300}
   handle: {fileID: 443602394}
   elevator: {fileID: 2077854515}
@@ -73833,7 +73830,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skybox: {fileID: 2100000, guid: b6a3f8bca2c865243929bac258c89b96, type: 2}
-  intensity: 0.1
 --- !u!135 &1454967000
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -107624,7 +107620,6 @@ MonoBehaviour:
   cancel: {fileID: 1910770772}
   ok: {fileID: 1052498871}
   secretNumber: 302454
-  clickSound: {fileID: 8300000, guid: 7f9c87925441e43bdbb6399f1c1793a6, type: 3}
   text: {fileID: 2053632543}
   anim: {fileID: 1987704690}
 --- !u!82 &1987704693

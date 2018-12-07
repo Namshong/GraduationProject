@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 게임 시작할때 랜덤으로 맵, gold key 위치 선정하고 열쇠 위치에 따른 나무 표지판 회전 */
 public class CreatingRandomMap : MonoBehaviour {
     private Vector3 desertLocation;     // 사막맵 위치
     private Vector3 forestLocation;     // 숲맵 위치
@@ -17,20 +18,18 @@ public class CreatingRandomMap : MonoBehaviour {
 	void Start () {
 
         /* 랜덤으로 맵 섞기 */
-        // 첫번째 요소 랜덤 뽑기
-        int choice = Random.Range(0, 3);
-
-        newX1 = arr[choice];
-        arr.RemoveAt(choice);
-        choice = Random.Range(0, 2);
-        newX2 = arr[choice];
-        newX3 = arr[1 - choice];
+        int choice = Random.Range(0, 3);        // 첫번째 x좌표 랜덤 뽑기
+        newX1 = arr[choice];                    // 새로운 x좌표 설정
+        arr.RemoveAt(choice);                   // 이미 선택된 위치는 리스트에서 삭제
+        choice = Random.Range(0, 2);            // 나머지 리스트에서 두번째 x좌표 뽑음
+        newX2 = arr[choice];                    // 새로운 두번째 x좌표 설정
+        newX3 = arr[1 - choice];                // 새로운 세번째 x좌표 설정
 
         print(newX1);
         print(newX2);
         print(newX3);
 
-        forestLocation.Set(newX1, 0, 0);    
+        forestLocation.Set(newX1, 0, 0);        // 각각 변수에 새로운 x좌표 설정
         desertLocation.Set(newX2, 0, 0);    
         caveLocation.Set(newX3, 0, 0);      
 

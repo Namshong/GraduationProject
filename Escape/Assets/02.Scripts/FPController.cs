@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 1인칭 카메라 코드 */
 public class FPController : MonoBehaviour {
 
     Vector2 mouseLook;      // 카메라가 움직이는 정도를 담는 벡터
